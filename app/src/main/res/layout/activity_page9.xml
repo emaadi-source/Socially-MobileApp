@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/chat_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white">
+
+    <!-- Header -->
+    <RelativeLayout
+        android:id="@+id/topBar"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@android:color/white"
+        android:elevation="4dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:id="@+id/backBtn"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_centerVertical="true"
+            android:background="@android:color/transparent"
+            android:src="@drawable/back_arrow_head"
+            android:scaleType="centerInside"
+            android:contentDescription="Back" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/receiverPic"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_toEndOf="@id/backBtn"
+            android:layout_marginStart="8dp"
+            android:src="@drawable/pfp_image" />
+
+        <TextView
+            android:id="@+id/receiverName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/receiverPic"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="10dp"
+            android:text="User"
+            android:textColor="@color/generalbg"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <!-- Call icons (use SRC, NOT background) -->
+        <LinearLayout
+            android:id="@+id/callIcons"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/btnPhoneCall"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:background="@drawable/pfp_camera_icon"
+                android:scaleType="centerInside"
+                android:contentDescription="Audio Call" />
+
+            <ImageButton
+                android:id="@+id/btnVideoCall"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/back_arrow_head"
+                android:scaleType="centerInside"
+                android:contentDescription="Video Call" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerChat"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/topBar"
+        android:layout_above="@id/messageBox"
+        android:padding="8dp"
+        android:clipToPadding="false" />
+
+    <!-- Message Box -->
+    <RelativeLayout
+        android:id="@+id/messageBox"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:background="#FAFAFA"
+        android:elevation="6dp"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp">
+
+        <ImageButton
+            android:id="@+id/btnCamera"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:layout_centerVertical="true"
+            android:background="@android:color/transparent"
+            android:src="@drawable/camera_icon"
+            android:scaleType="centerInside"
+            android:contentDescription="Camera" />
+
+        <EditText
+            android:id="@+id/etMessage"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:layout_toEndOf="@id/btnCamera"
+            android:layout_toStartOf="@id/btnGallery"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:background="@android:drawable/edit_text"
+            android:hint="Message..."
+            android:paddingLeft="14dp"
+            android:paddingRight="14dp"
+            android:singleLine="true" />
+
+        <ImageButton
+            android:id="@+id/btnGallery"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:layout_toStartOf="@id/btnSend"
+            android:layout_centerVertical="true"
+            android:background="@android:color/transparent"
+            android:src="@drawable/pic_icon"
+            android:scaleType="centerInside"
+            android:contentDescription="Gallery" />
+
+        <ImageButton
+            android:id="@+id/btnSend"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:background="@android:color/transparent"
+            android:src="@drawable/share_icon_black"
+            android:scaleType="centerInside"
+            android:contentDescription="Send" />
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Permissions for Agora -->
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-feature android:name="android.hardware.camera.any" android:required="false"/>
+
+
+
+    <application
+        android:name=".SessionManager"
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@drawable/socially_logo"
+        android:label="Socially"
+        android:roundIcon="@drawable/socially_logo"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.I230665_i230026"
+        android:windowBackground="@android:color/white"
+        android:hardwareAccelerated="true"
+        android:largeHeap="true"
+        android:usesCleartextTraffic="true">
+
+        <service
+            android:name=".MyFirebaseMessagingService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <!-- Incoming call heads-up screen -->
+        <activity
+            android:name=".CallIncomingActivity"
+            android:exported="false"
+            android:launchMode="singleTop"
+            android:excludeFromRecents="true"
+            android:theme="@style/Theme.I230665_i230026" />
+
+        <activity
+            android:name=".ViewStoryActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AddStoryActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CommentsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CreatePostActivity"
+            android:exported="false" />
+        <activity
+            android:name=".EditProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".UserProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".page22"
+            android:exported="false" />
+        <activity
+            android:name=".page21"
+            android:exported="false" />
+        <activity
+            android:name=".page20"
+            android:exported="false" />
+        <activity
+            android:name=".page19"
+            android:exported="false" />
+        <activity
+            android:name=".page18"
+            android:exported="false" />
+        <activity
+            android:name=".page16"
+            android:exported="false" />
+        <activity
+            android:name=".page15"
+            android:exported="false" />
+        <activity
+            android:name=".page14"
+            android:exported="false" />
+        <activity
+            android:name=".page13"
+            android:exported="false" />
+        <activity
+            android:name=".page12"
+            android:exported="false" />
+        <activity
+            android:name=".page11"
+            android:exported="false" />
+        <activity
+            android:name=".page10"
+            android:exported="false"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".page9"
+            android:exported="false" />
+        <activity
+            android:name=".page8"
+            android:exported="false" />
+        <activity
+            android:name=".page7"
+            android:exported="false" />
+        <activity
+            android:name=".page6"
+            android:exported="false" />
+        <activity
+            android:name=".page5"
+            android:exported="false" />
+        <activity
+            android:name=".page4"
+            android:exported="false" />
+        <activity
+            android:name=".page3"
+            android:exported="false" />
+        <activity
+            android:name=".page2"
+            android:exported="false" />
+        <activity
+            android:name=".ChatActivity"
+            android:exported="false" />
+        <activity
+            android:name=".VoiceCallActivity"
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+        <activity
+            android:name=".VideoCallActivity"
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+
+    </application>
+</manifest>

@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Story canvas with rounded corners -->
+    <RelativeLayout
+        android:id="@+id/storyCard"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="8dp"
+        android:clipToOutline="true">
+
+        <!-- Story image -->
+        <ImageView
+            android:id="@+id/storyImage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/fyp13" />
+
+        <!-- Header: avatar, username, time, close -->
+        <RelativeLayout
+            android:id="@+id/header"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_alignParentTop="true"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:gravity="center_vertical"
+            android:layout_marginTop="30dp">
+
+            <!-- progress line -->
+            <View
+                android:id="@+id/progress"
+                android:layout_width="match_parent"
+                android:layout_height="3dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="6dp"
+                android:background="@color/white" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/avatar"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_centerVertical="true"
+                android:src="@drawable/pfp_image3"
+                android:scaleType="centerCrop"
+                android:padding="2dp" />
+
+            <LinearLayout
+                android:id="@+id/userBlock"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/avatar"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/username"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="craig_love"
+                    android:textStyle="bold"
+                    android:textColor="@color/white" />
+
+                <TextView
+                    android:id="@+id/dot"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="  •  "
+                    android:textColor="#CCFFFFFF" />
+
+                <TextView
+                    android:id="@+id/time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="4h"
+                    android:textColor="#CCFFFFFF" />
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/btnClose"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/close_icon_medium" />
+        </RelativeLayout>
+
+        <!-- Bottom: message bar + actions -->
+        <RelativeLayout
+            android:id="@+id/bottomBar"
+            android:layout_width="match_parent"
+            android:layout_height="76dp"
+            android:layout_alignParentBottom="true"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:paddingBottom="12dp"
+            android:background="@color/black">
+
+            <!-- input background -->
+            <RelativeLayout
+                android:id="@+id/messageBg"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:layout_alignParentBottom="true"
+                android:background="@drawable/greyish_button"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp">
+
+                <!-- camera icon left -->
+                <ImageView
+                    android:id="@+id/icoCamera"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/camer_icon_chats" />
+
+                <!-- placeholder input text -->
+                <TextView
+                    android:id="@+id/txtHint"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@id/icoCamera"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="10dp"
+                    android:text="Send Message" />
+
+                <!-- heart & send on the right -->
+                <ImageView
+                    android:id="@+id/icoHeart"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/like_icon" />
+
+                <ImageView
+                    android:id="@+id/icoSend"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_toStartOf="@id/icoHeart"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="14dp"
+                    android:src="@drawable/share_icon" />
+            </RelativeLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+
+
+</RelativeLayout>

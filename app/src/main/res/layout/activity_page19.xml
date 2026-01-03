@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Story image (replace with PreviewView if live camera) -->
+    <ImageView
+        android:id="@+id/storyBg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/fyp15"/>
+
+    <!-- ===== TOP TOOLS ===== -->
+    <HorizontalScrollView
+        android:id="@+id/toolsBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:fillViewport="true"
+        android:layout_marginTop="30dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp">
+
+            <!-- Close on extreme left -->
+            <ImageView
+                android:id="@+id/btnClose"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_alignParentStart="true"
+                android:background="@drawable/close_brown_icon"
+                android:padding="8dp"/>
+
+            <!-- More on extreme right -->
+            <ImageView
+                android:id="@+id/btnMore"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_alignParentEnd="true"
+                android:background="@drawable/dot3_options_brown_icon"
+                android:padding="8dp"/>
+
+            <!-- Middle icons between Close and More -->
+            <LinearLayout
+                android:id="@+id/middleIcons"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toStartOf="@id/btnMore"
+                android:layout_centerVertical="true"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp">
+
+                <!-- Tags -->
+                <ImageView
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:background="@drawable/tag_brown"
+                    android:padding="8dp"/>
+
+                <!-- Caps -->
+                <ImageView
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_marginStart="10dp"
+                    android:background="@drawable/caps_icon_brown"
+                    android:padding="8dp"/>
+
+                <!-- Stickers -->
+                <ImageView
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_marginStart="10dp"
+                    android:background="@drawable/sticker_brown_icon"
+                    android:padding="8dp"/>
+
+                <!-- Music -->
+                <ImageView
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_marginStart="10dp"
+                    android:background="@drawable/music_brown_icon"
+                    android:padding="8dp"/>
+
+                <!-- Filters -->
+                <ImageView
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_marginStart="10dp"
+                    android:background="@drawable/filters_brown_icon"
+                    android:padding="8dp"/>
+            </LinearLayout>
+        </RelativeLayout>
+    </HorizontalScrollView>
+
+    <!-- ===== BOTTOM SHARE ROW (proportional) ===== -->
+    <LinearLayout
+        android:id="@+id/shareRow"
+        android:layout_width="match_parent"
+        android:layout_height="92dp"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:padding="12dp"
+        android:gravity="bottom"
+        android:background="@color/black">
+
+        <!-- Your stories (45%) -->
+        <RelativeLayout
+            android:id="@+id/btnYourStories"
+            android:layout_width="0dp"
+            android:layout_height="52dp"
+            android:layout_weight="0.45"
+            android:background="@drawable/cf_bg"
+            android:paddingStart="12dp"
+            android:paddingEnd="16dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/miniAvatar"
+                android:layout_width="26dp"
+                android:layout_height="26dp"
+                android:layout_centerVertical="true"
+                android:src="@drawable/fyp4"
+                android:scaleType="centerCrop"
+                android:padding="1dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/miniAvatar"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="8dp"
+                android:text="Your stories"
+                android:textStyle="bold"
+                android:textColor="@color/white"/>
+        </RelativeLayout>
+
+        <!-- Close Friends (45%) -->
+        <RelativeLayout
+            android:id="@+id/btnCloseFriends"
+            android:layout_width="0dp"
+            android:layout_height="52dp"
+            android:layout_weight="0.45"
+            android:background="@drawable/cf_bg"
+            android:paddingStart="12dp"
+            android:paddingEnd="16dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp">
+
+            <View
+                android:id="@+id/greenDot"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_centerVertical="true"
+                android:background="@drawable/close_friends_star_icon"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/greenDot"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="10dp"
+                android:text="Close Friends"
+                android:textStyle="bold"
+                android:textColor="@color/white"/>
+        </RelativeLayout>
+
+        <!-- Next arrow (10%) -->
+        <RelativeLayout
+            android:id="@+id/btnShare"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_weight="0.10"
+            android:gravity="center"
+            android:layout_marginBottom="15dp">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/next_icon"
+                android:padding="12dp"/>
+        </RelativeLayout>
+    </LinearLayout>
+
+</RelativeLayout>

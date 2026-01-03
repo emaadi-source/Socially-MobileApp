@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "488888817986",
+    "project_id": "i230665i230026new",
+    "storage_bucket": "i230665i230026new.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:488888817986:android:206bcb5045dc28a0c7d0db",
+        "android_client_info": {
+          "package_name": "com.faujipanda.i230665_i230026"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyApVsUuyTdBxc-F4VY-BcEjx2ngZX2u544"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

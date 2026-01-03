@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="70dp"
+    android:padding="10dp"
+    android:background="?android:attr/selectableItemBackground"
+    android:clickable="true">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/dmAvatar"
+        android:layout_width="52dp"
+        android:layout_height="52dp"
+        android:src="@drawable/pfp_image"
+        android:layout_centerVertical="true" />
+
+    <TextView
+        android:id="@+id/dmName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/dmAvatar"
+        android:layout_marginStart="12dp"
+        android:text="Username"
+        android:textColor="#000"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/dmPreview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/dmName"
+        android:layout_toEndOf="@id/dmAvatar"
+        android:layout_marginStart="12dp"
+        android:text="Last message here"
+        android:textColor="#666"
+        android:textSize="13sp" />
+
+    <ImageView
+        android:id="@+id/onlineDot"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="12dp"
+        android:src="@drawable/offline_dot" />
+</RelativeLayout>

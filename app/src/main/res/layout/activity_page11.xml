@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <!-- Top Title -->
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:text="Notifications"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="@color/generalbg" />
+
+    <!-- Notifications RecyclerView -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/title"
+        android:layout_above="@+id/bottomBar"
+        android:layout_marginTop="16dp"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp" />
+
+    <!-- Bottom bar -->
+    <RelativeLayout
+        android:id="@+id/bottomBar"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_alignParentBottom="true"
+        android:paddingStart="45dp"
+        android:paddingEnd="45dp"
+        android:layout_marginBottom="5dp">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/generalbg"/>
+
+        <ImageView
+            android:id="@+id/navHome"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/home_icon" />
+
+        <ImageView
+            android:id="@+id/navSearch"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_toEndOf="@id/navHome"
+            android:layout_marginStart="45dp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/search_icon" />
+
+        <ImageView
+            android:id="@+id/navCreate"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_centerInParent="true"
+            android:src="@drawable/create_icon" />
+
+        <ImageView
+            android:id="@+id/navLike"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_toStartOf="@id/navProfile"
+            android:layout_marginEnd="45dp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/like_icon_filled" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/navProfile"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/pfp_image" />
+    </RelativeLayout>
+
+</RelativeLayout>

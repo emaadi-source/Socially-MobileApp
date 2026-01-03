@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/edit_profile_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:layout_marginTop="30dp">
+
+    <!-- ===== Top Bar ===== -->
+    <RelativeLayout
+        android:id="@+id/topBar"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/btnCancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cancel"
+            android:textColor="#111111"
+            android:textSize="16dp" />
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="Edit Profile"
+            android:textStyle="bold"
+            android:textColor="#111111"
+            android:textSize="16dp" />
+
+        <TextView
+            android:id="@+id/btnDone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:text="Done"
+            android:textColor="@color/generalbg"
+            android:textStyle="bold"
+            android:textSize="16dp" />
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/topDivider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/topBar"
+        android:background="#EFEFEF" />
+
+    <!-- ===== Scrollable Content ===== -->
+    <ScrollView
+        android:id="@+id/scroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/topDivider"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Avatar Block -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="172dp"
+                android:gravity="center_horizontal">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/avatar"
+                    android:layout_width="96dp"
+                    android:layout_height="96dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="24dp"
+                    android:src="@drawable/pfp_image" />
+
+                <TextView
+                    android:id="@+id/changePhoto"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/avatar"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="12dp"
+                    android:text="Change Profile Photo"
+                    android:textColor="@color/generalbg"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#EFEFEF" />
+
+            <!-- First Name -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp">
+
+                <TextView
+                    android:id="@+id/lblFirstName"
+                    android:layout_width="96dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="First Name"
+                    android:textColor="#111111" />
+
+                <EditText
+                    android:id="@+id/etFirstName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@id/lblFirstName"
+                    android:layout_centerVertical="true"
+                    android:background="@android:color/transparent"
+                    android:hint="First Name"
+                    android:textColor="#111111"
+                    android:padding="0dp" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#EFEFEF" />
+
+            <!-- Last Name -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp">
+
+                <TextView
+                    android:id="@+id/lblLastName"
+                    android:layout_width="96dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="Last Name"
+                    android:textColor="#111111" />
+
+                <EditText
+                    android:id="@+id/etLastName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@id/lblLastName"
+                    android:layout_centerVertical="true"
+                    android:background="@android:color/transparent"
+                    android:hint="Last Name"
+                    android:textColor="#111111"
+                    android:padding="0dp" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#EFEFEF" />
+
+            <!-- Username -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp">
+
+                <TextView
+                    android:id="@+id/lblUsername"
+                    android:layout_width="96dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="Username"
+                    android:textColor="#111111" />
+
+                <EditText
+                    android:id="@+id/etUsername"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@id/lblUsername"
+                    android:layout_centerVertical="true"
+                    android:background="@android:color/transparent"
+                    android:hint="Username"
+                    android:textColor="#111111"
+                    android:padding="0dp" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#EFEFEF" />
+
+            <!-- Website -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp">
+
+                <TextView
+                    android:id="@+id/lblWebsite"
+                    android:layout_width="96dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="Website"
+                    android:textColor="#111111" />
+
+                <EditText
+                    android:id="@+id/etWebsite"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@id/lblWebsite"
+                    android:layout_centerVertical="true"
+                    android:background="@android:color/transparent"
+                    android:hint="Website"
+                    android:textColorHint="#B0B0B0"
+                    android:padding="0dp" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#EFEFEF" />
+
+            <!-- Bio -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp">
+
+                <TextView
+                    android:id="@+id/lblBio"
+                    android:layout_width="96dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="16dp"
+                    android:text="Bio"
+                    android:textColor="#111111" />
+
+                <EditText
+                    android:id="@+id/etBio"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_toEndOf="@id/lblBio"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="8dp"
+                    android:gravity="top"
+                    android:background="@android:color/transparent"
+                    android:hint="Tell people about yourself"
+                    android:textColor="#111111"
+                    android:padding="0dp" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="8dp"
+                android:background="#F7F7F7" />
+
+            <!-- Switch to Professional Account -->
+            <TextView
+                android:id="@+id/switchPro"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:gravity="center_vertical"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:text="Switch to Professional Account"
+                android:textColor="@color/generalbg"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#EFEFEF" />
+
+            <!-- ===== Private Info ===== -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="16dp"
+                android:paddingTop="12dp"
+                android:text="Private Information"
+                android:textStyle="bold"
+                android:textColor="#9A9A9A" />
+
+            <!-- Email -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp">
+
+                <TextView
+                    android:id="@+id/lblEmail"
+                    android:layout_width="96dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="Email"
+                    android:textColor="#111111" />
+
+                <EditText
+                    android:id="@+id/etEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@id/lblEmail"
+                    android:layout_centerVertical="true"
+                    android:background="@android:color/transparent"
+                    android:hint="Email"
+                    android:textColor="#111111"
+                    android:inputType="textEmailAddress"
+                    android:padding="0dp" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#EFEFEF" />
+
+            <!-- Phone -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp">
+
+                <TextView
+                    android:id="@+id/lblPhone"
+                    android:layout_width="96dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="Phone"
+                    android:textColor="#111111" />
+
+                <EditText
+                    android:id="@+id/etPhone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@id/lblPhone"
+                    android:layout_centerVertical="true"
+                    android:background="@android:color/transparent"
+                    android:hint="Phone"
+                    android:textColor="#111111"
+                    android:inputType="phone"
+                    android:padding="0dp" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#EFEFEF" />
+
+            <!-- Gender -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp">
+
+                <TextView
+                    android:id="@+id/lblGender"
+                    android:layout_width="96dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="Gender"
+                    android:textColor="#111111" />
+
+                <EditText
+                    android:id="@+id/etGender"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@id/lblGender"
+                    android:layout_centerVertical="true"
+                    android:background="@android:color/transparent"
+                    android:hint="Gender"
+                    android:textColor="#111111"
+                    android:padding="0dp" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="24dp"
+                android:background="@color/white" />
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

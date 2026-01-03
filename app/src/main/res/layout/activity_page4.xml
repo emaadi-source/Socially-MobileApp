@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/page4_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <!-- Top back arrow -->
+    <ImageView
+        android:id="@+id/btnBack"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="50dp"
+        android:layout_alignParentStart="true"
+        android:padding="8dp"
+        android:src="@drawable/back_arrow_head"
+        />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true">
+        <!-- Big centered title -->
+        <TextView
+            android:id="@+id/titleSocially"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="Socially"
+            android:textColor="@color/generalbg"
+            android:textSize="36dp"
+            android:textStyle="bold"
+            android:shadowRadius="12" />
+
+        <!-- Username field -->
+        <EditText
+            android:id="@+id/etUsername"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_below="@id/titleSocially"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginTop="28dp"
+            android:paddingStart="14dp"
+            android:paddingEnd="14dp"
+            android:hint="Username"
+            android:textColor="#222222"
+            android:textSize="14dp"
+            android:background="@android:drawable/edit_text"
+            android:singleLine="true" />
+
+        <!-- Password field -->
+        <EditText
+            android:id="@+id/etPassword"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_below="@id/etUsername"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginTop="12dp"
+            android:paddingStart="14dp"
+            android:paddingEnd="14dp"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:textColor="#222222"
+            android:textSize="14dp"
+            android:background="@android:drawable/edit_text"
+            android:singleLine="true" />
+
+        <!-- Right-aligned "Forgot password?" lined up with fields -->
+        <TextView
+            android:id="@+id/tvForgot"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/etPassword"
+            android:layout_alignEnd="@id/etPassword"
+            android:layout_marginTop="10dp"
+            android:text="Forgot password?"
+            android:textColor="@color/generalbg"
+            android:textSize="13dp" />
+
+        <!-- Full-width rounded login button look with tint -->
+        <Button
+            android:id="@+id/btnLoginP4"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_below="@id/tvForgot"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginTop="18dp"
+            android:text="Log in"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="16dp"
+            android:backgroundTint="@color/generalbg" />
+
+        <!-- OR separator (centered text with balanced lines to edges of fields) -->
+        <RelativeLayout
+            android:id="@+id/orRow"
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:layout_below="@id/btnLoginP4"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginTop="22dp">
+
+            <TextView
+                android:id="@+id/orText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="OR"
+                android:textColor="#9E9E9E"
+                android:textStyle="bold" />
+
+            <View
+                android:id="@+id/leftLine"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_centerVertical="true"
+                android:layout_toStartOf="@id/orText"
+                android:layout_marginEnd="12dp"
+                android:background="#E6E6E6" />
+
+            <View
+                android:id="@+id/rightLine"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@id/orText"
+                android:layout_marginStart="12dp"
+                android:background="#E6E6E6" />
+        </RelativeLayout>
+
+        <!-- Sign up prompt centered exactly like the mock -->
+        <RelativeLayout
+            android:id="@+id/signupRow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/orRow"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="22dp">
+
+            <TextView
+                android:id="@+id/tvNoAccount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Don't have an account?"
+                android:textColor="#9E9E9E"
+                android:textSize="13dp" />
+
+            <TextView
+                android:id="@+id/tvSignup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/tvNoAccount"
+                android:layout_marginStart="6dp"
+                android:text="Sign up."
+                android:textColor="@color/generalbg"
+                android:textStyle="bold"
+                android:textSize="13dp" />
+        </RelativeLayout>
+    </RelativeLayout>
+    <!-- Bottom divider and brand, centered near the navigation pill -->
+    <View
+        android:id="@+id/bottomDivider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="56dp"
+        android:background="#EEEEEE" />
+
+    <TextView
+        android:id="@+id/bottomBrand"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp"
+        android:text="Socially"
+        android:textColor="@color/generalbg"
+        android:textStyle="bold" />
+
+</RelativeLayout>

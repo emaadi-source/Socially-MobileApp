@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:padding="24dp"
+    android:background="@color/generalbg"
+    android:hardwareAccelerated="false">
+
+    <!-- Safe, non-scaled background -->
+    <ImageView
+        android:id="@+id/imgIncomingBg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitCenter"
+        android:adjustViewBounds="true"
+        android:alpha="0.25"
+        android:visibility="gone"
+        android:hardwareAccelerated="false" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/imgCallerAvatar"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:src="@drawable/pfp_image"
+            android:layout_marginBottom="20dp" />
+
+        <TextView
+            android:id="@+id/tvCaller"
+            android:text="Incoming call..."
+            android:textColor="@android:color/white"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginBottom="6dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/tvTimer"
+            android:text="30s remaining"
+            android:textColor="@android:color/white"
+            android:textSize="14sp"
+            android:gravity="center"
+            android:layout_marginBottom="32dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/btnAccept"
+                android:text="Accept"
+                android:layout_width="120dp"
+                android:layout_height="48dp"
+                android:backgroundTint="@color/black"
+                android:textColor="@android:color/white"
+                android:textStyle="bold" />
+
+            <Space
+                android:layout_width="24dp"
+                android:layout_height="match_parent" />
+
+            <Button
+                android:id="@+id/btnDecline"
+                android:text="Decline"
+                android:layout_width="120dp"
+                android:layout_height="48dp"
+                android:backgroundTint="@android:color/holo_red_dark"
+                android:textColor="@android:color/white"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

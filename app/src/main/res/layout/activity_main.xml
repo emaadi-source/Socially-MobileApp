@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:id="@+id/firstpage">
+
+    <!--Center logo-->
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/socially_logo"
+        android:layout_centerInParent="true"
+        android:contentDescription="@string/app_name" />
+
+    <!-- from text -->
+    <TextView
+        android:id="@+id/from_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="from"
+        android:textSize="20dp"
+        android:textColor="@android:color/darker_gray"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="80dp"/>
+
+    <!-- SMD text -->
+    <TextView
+        android:id="@+id/smd_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SMD"
+        android:textSize="50dp"
+        android:textStyle="bold"
+        android:textColor="@color/generalbg"
+        android:layout_below="@id/from_text"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="-85dp"
+        android:layout_marginBottom="30dp"/>
+
+</RelativeLayout>

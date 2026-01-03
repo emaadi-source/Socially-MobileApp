@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/feed_item_root"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white">
+
+    <!-- Header -->
+    <RelativeLayout
+        android:id="@+id/postHeader"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/feedAvatar"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/pfp_image"
+            app:civ_border_width="1dp"
+            app:civ_border_color="@color/generalbg" />
+
+        <TextView
+            android:id="@+id/feedUsername"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/feedAvatar"
+            android:layout_marginStart="10dp"
+            android:layout_centerVertical="true"
+            android:text="username"
+            android:textStyle="bold"
+            android:textColor="#111111"
+            android:textSize="15sp" />
+
+        <ImageView
+            android:id="@+id/postMenu"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/horizontal_3dot" />
+    </RelativeLayout>
+
+    <!-- Post Image -->
+    <ImageView
+        android:id="@+id/feedImage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/postHeader"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        android:src="@drawable/homepage_i1" />
+
+    <!-- Actions -->
+    <RelativeLayout
+        android:id="@+id/postActions"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_below="@id/feedImage"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp">
+
+        <ImageView
+            android:id="@+id/feedHeart"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/like_icon_black" />
+
+        <ImageView
+            android:id="@+id/feedComment"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_toEndOf="@id/feedHeart"
+            android:layout_marginStart="16dp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/comment_icon_black" />
+
+        <ImageView
+            android:id="@+id/shareBtn"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_toEndOf="@id/feedComment"
+            android:layout_marginStart="16dp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/share_icon_black" />
+
+        <ImageView
+            android:id="@+id/saveBtn"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/save_icon_black" />
+    </RelativeLayout>
+
+    <!-- Likes -->
+    <TextView
+        android:id="@+id/feedLikes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/postActions"
+        android:layout_marginStart="12dp"
+        android:text="0 likes"
+        android:textStyle="bold"
+        android:textColor="#111111"
+        android:textSize="14sp" />
+    <TextView
+        android:id="@+id/feedComments"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/postActions"
+        android:layout_toEndOf="@id/feedLikes"
+        android:layout_marginStart="12dp"
+        android:text="0 comments"
+        android:textStyle="bold"
+        android:textColor="#111111"
+        android:textSize="14sp" />
+
+
+    <!-- Caption -->
+    <TextView
+        android:id="@+id/feedCaption"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/feedLikes"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginTop="6dp"
+        android:text="caption text here"
+        android:textColor="#333333"
+        android:textSize="14sp" />
+
+    <!-- Divider -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="12dp"
+        android:layout_below="@id/feedCaption"
+        android:layout_marginTop="12dp"
+        android:background="#F3F3F3" />
+</RelativeLayout>

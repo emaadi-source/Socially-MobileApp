@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Story image -->
+    <ImageView
+        android:id="@+id/storyImage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/fyp19" />
+
+
+    <!-- ===== Top header ===== -->
+    <RelativeLayout
+        android:id="@+id/topHeader"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:layout_alignParentTop="true"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:layout_marginTop="30dp">
+
+        <!-- progress line -->
+        <View
+            android:id="@+id/progress"
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="8dp"
+            android:background="@color/white" />
+
+        <!-- avatar -->
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/avatar"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_below="@id/progress"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/fyp4" />
+
+        <!-- name + verified + time -->
+        <LinearLayout
+            android:id="@+id/nameRow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/avatar"
+            android:layout_alignTop="@id/avatar"
+            android:layout_marginStart="10dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/username"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="gursky.studio"
+                android:textStyle="bold"
+                android:textColor="@color/white" />
+
+            <ImageView
+                android:id="@+id/verified"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:layout_marginStart="6dp"
+                android:src="@drawable/verified_icon" />
+
+            <TextView
+                android:id="@+id/dot"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="  •  "
+                android:textColor="#CCFFFFFF" />
+
+            <TextView
+                android:id="@+id/time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="11h"
+                android:textColor="#CCFFFFFF" />
+        </LinearLayout>
+
+        <!-- more (optional) -->
+        <ImageView
+            android:id="@+id/btnClose"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignTop="@id/avatar"
+            android:src="@drawable/close_icon_medium" />
+    </RelativeLayout>
+
+    <!-- ===== Bottom action bar (5 items, equally spaced) ===== -->
+    <LinearLayout
+        android:id="@+id/bottomBar"
+        android:layout_width="match_parent"
+        android:layout_height="88dp"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:paddingBottom="8dp"
+        android:background="@color/black">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:weightSum="5">
+
+            <!-- item: Activity -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <!-- Stacked viewers (bottom-left) -->
+                <RelativeLayout
+                    android:id="@+id/stackedViewers"
+                    android:layout_width="96dp"
+                    android:layout_height="36dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="12dp">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/v1"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:src="@drawable/fyp9" />
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/v2"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:layout_toEndOf="@id/v1"
+                        android:layout_marginStart="-10dp"
+                        android:src="@drawable/fyp10"/>
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/v3"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:layout_toEndOf="@id/v2"
+                        android:layout_marginStart="-10dp"
+                        android:src="@drawable/fyp11" />
+                </RelativeLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:text="Activity"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+
+            <!-- item: Create -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:id="@+id/create">
+
+                <ImageView
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:background="@drawable/create_reels_icon"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:text="Create"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+
+            <!-- item: Facebook -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:background="@drawable/facebook_icon"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:text="Facebook"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+
+            <!-- item: Highlight -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:background="@drawable/highlight_icon"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:text="Highlight"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+
+            <!-- item: More -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:background="@drawable/dot3_options_brown_icon" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:text="More"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>
